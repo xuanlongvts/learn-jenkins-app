@@ -50,7 +50,6 @@ pipeline {
             }           
             steps {
                 sh '''
-                    sudo chown -R 133:141 "/.npm"
                     npm install netlify-cli -g
                     netlify --version
                 '''
