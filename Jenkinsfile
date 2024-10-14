@@ -14,9 +14,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    sudo npm cache clean -force
-                    sudo npm i
-                    sudo npm run build
+                    npm i
+                    npm run build
                     ls -la
                 '''
             }
