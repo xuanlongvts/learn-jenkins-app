@@ -21,6 +21,8 @@ pipeline {
                     node --version
                     npm --version
                     npm install pnpm
+                    node_modules/.pnpm i
+                    node_modules/.pnpm run build
                     ls -la
                 '''
             }
