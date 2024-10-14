@@ -14,8 +14,9 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm i
-                    npm run build
+                    npm install -g pnpm
+                    pnpm i
+                    pnpm run build
                     ls -la
                 '''
             }
