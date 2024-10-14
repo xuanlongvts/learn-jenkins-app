@@ -47,7 +47,11 @@ pipeline {
                     image 'node:22-alpine'
                     reuseNode true
                 }
-            }                     
+            } 
+            environment {
+                'npm_config_cache=npm-cache',
+                'HOME=.'
+            }                            
             steps {
                 sh '''
                     npm install netlify-cli
