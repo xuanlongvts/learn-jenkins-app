@@ -47,6 +47,9 @@ pipeline {
                     image 'node:22-alpine'
                     reuseNode true
                 }
+            }
+            environment {
+                NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
             }           
             steps {
                 sh '''
