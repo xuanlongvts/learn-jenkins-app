@@ -47,17 +47,11 @@ pipeline {
                     image 'node:22-alpine'
                     reuseNode true
                 }
-            }
-            environment {
-                // Override HOME to WORKSPACE value
-                HOME = "${WORKSPACE}"
-                // or override npm's cache directory (~/.npm)
-                NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
-            }
+            }           
             steps {
                 sh '''
-                    npm install netlify-cli -g
-                    netlify --version
+                    npm install netlify-cli
+                    node_modules/.bin/netlify --version
                 '''
             }
         }
