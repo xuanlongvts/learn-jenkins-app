@@ -49,12 +49,14 @@ pipeline {
                 }
             } 
             environment {
-                'npm_config_cache=npm-cache'
-                'HOME=.'
+                // Override HOME to WORKSPACE value
+                HOME = "${WORKSPACE}"
+                // or override npm's cache directory (~/.npm)
+                NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
             }                            
             steps {
                 sh '''
-                    npm install netlify-cli
+                    npm install -g netlify-cli --unsafe-perm=true
                 '''
             }
         }
