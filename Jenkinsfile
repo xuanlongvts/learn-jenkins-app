@@ -48,6 +48,12 @@ pipeline {
                     reuseNode true
                 }
             }
+            environment {
+                // Override HOME to WORKSPACE value
+                HOME = "${WORKSPACE}"
+                // or override npm's cache directory (~/.npm)
+                NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+            }
             steps {
                 sh '''
                     npm install netlify-cli -g
