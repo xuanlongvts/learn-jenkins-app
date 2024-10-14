@@ -58,6 +58,7 @@ pipeline {
                 sh '''
                     npm i
                     npm ci
+                    node_modules/.bin/netlify --version
                 '''
             }
         }
